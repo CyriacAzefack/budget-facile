@@ -1,0 +1,15 @@
+version: '3'
+
+tasks:
+  ruff-linter:
+    desc: "Run ruff linter"
+    cmds:
+      - poetry run ruff check --config pyproject.toml
+  ruff-formatter:
+    desc: "Run ruff formatter"
+    cmds:
+      - poetry run ruff format --config pyproject.toml
+  interrogate:
+    desc: "Run interrogate"
+    cmds:
+      - poetry run interrogate --config pyproject.toml

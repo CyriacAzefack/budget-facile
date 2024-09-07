@@ -1,0 +1,16 @@
+version: '3'
+
+tasks:
+  api_env:
+      desc: "Lock requirements for API"
+      dir: '{{.USER_WORKING_DIR}}'
+      cmds:
+        - poetry lock
+        - poetry export --without-hashes -f requirements.txt --output api/requirements.txt
+
+  ui_env:
+    desc: "Lock requirements for UI"
+    dir: '{{.USER_WORKING_DIR}}'
+    cmds:
+      - poetry lock
+      - poetry export --without-hashes -f requirements.txt --output ui/requirements.txt
